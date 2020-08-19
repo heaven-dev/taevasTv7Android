@@ -6,11 +6,11 @@
     <string name="arrows">Arrows</string>
     <string name="arrow">Arrow</string>
 
-    <string name="toolbar_text">Kun sisältö ratkaisee</string>
+    <string name="toolbar_text">Kui sisu on oluline</string>
     <string name="exit_question">Sulje TV7 sovellus?</string>
     <string name="yes">OK</string>
-    <string name="no">Peruuta</string>
-    <string name="coming_on_channel">Tulossa kanavalta</string>
-    <string name="today">Tänään</string>
+    <string name="no">Tühista</string>
+    <string name="coming_on_channel">Tulekul</string>
+    <string name="today">Täna</string>
 
 </resources>
