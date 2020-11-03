@@ -11,6 +11,8 @@ import et.tv7.taevastv7.R;
 abstract public class Constants {
     final static public String LOG_TAG = "tv7";
 
+    final static public int VOLLEY_TIMEOUT_VALUE = 60000;
+
     final static public String STREAM_URL = "https://vod.tv7.fi:443/tv7-ee/_definst_/smil:tv7-ee.smil/playlist.m3u8";
 
     final static public float PROGRESS_BAR_SIZE = 0.85f;
