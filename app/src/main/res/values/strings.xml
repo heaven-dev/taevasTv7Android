@@ -13,4 +13,24 @@
     <string name="coming_on_channel">Tulekul</string>
     <string name="today">Täna</string>
 
+    <string name="net_tv">Neti-TV</string>
+    <string name="archive">Arhiiv</string>
+    <string name="guide">Saatekava</string>
+    <string name="search">Otsing</string>
+
+    <string name="we_recommend">Vaata arhiivist"</string>
+    <string name="most_viewed">Vaadatuimad</string>
+    <string name="newest">Kõige uuemad</string>
+    <string name="categories">Kategooriad</string>
+    <string name="category">Kategooria</string>
+    <string name="series">Saatesari</string>
+
+    <string name="first_broadcast">Esimene saade</string>
+    <string name="duration">Kestus</string>
+    <string name="episode">Osa</string>
+
+    <string name="back">Tagasi</string>
+    <string name="do_search">Otsi</string>
+    <string name="clear">Kustuta</string>
+    <string name="search_results">Otsingu tulemused</string>
 </resources>
