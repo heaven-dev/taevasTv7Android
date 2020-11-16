@@ -16,8 +16,6 @@ import org.json.JSONObject;
 import java.net.URLEncoder;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
 
 import et.tv7.taevastv7.BuildConfig;
 import et.tv7.taevastv7.TaevasTv7;
@@ -93,7 +91,6 @@ import static et.tv7.taevastv7.helpers.Constants.SUB_CATEGORIES_METHOD;
 import static et.tv7.taevastv7.helpers.Constants.TIME;
 import static et.tv7.taevastv7.helpers.Constants.TRANSLATION_METHOD;
 import static et.tv7.taevastv7.helpers.Constants.TYPE;
-import static et.tv7.taevastv7.helpers.Constants.UTC;
 import static et.tv7.taevastv7.helpers.Constants.UTF_8;
 import static et.tv7.taevastv7.helpers.Constants.VISIBLE_ON_VOD_SINCE;
 import static et.tv7.taevastv7.helpers.Constants.VOD_PARAM;
@@ -637,7 +634,7 @@ public class ArchiveViewModel extends ViewModel {
         for (int i = 0; i < array.length(); i++) {
             JSONObject respObj = new JSONObject();
             JSONObject sourceObj = array.getJSONObject(i);
-            
+
             setValue(respObj, ID, this.getValue(sourceObj, ID), true);
             setValue(respObj, IMAGE_PATH, this.getValue(sourceObj, IMAGE_PATH), false);
             setValue(respObj, LINK_PATH, this.getValue(sourceObj, LINK_PATH), false);
@@ -865,7 +862,7 @@ public class ArchiveViewModel extends ViewModel {
      */
     private String getDateTimeByTimeInMs(String time) {
         if (time != null) {
-            Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
+            Calendar calendar = Utils.getLocalCalendar();
             calendar.setTimeInMillis(Long.valueOf(time));
 
             return calendar.get(Calendar.DATE) + DOT + (calendar.get(Calendar.MONTH) + 1) + DOT + calendar.get(Calendar.YEAR)
@@ -883,7 +880,7 @@ public class ArchiveViewModel extends ViewModel {
      */
     private String getDateByTimeInMs(String time) {
         if (time != null) {
-            Calendar calendar = GregorianCalendar.getInstance(TimeZone.getDefault());
+            Calendar calendar = Utils.getLocalCalendar();
             calendar.setTimeInMillis(Long.valueOf(time));
 
             return calendar.get(Calendar.DATE) + DOT + (calendar.get(Calendar.MONTH) + 1) + DOT + calendar.get(Calendar.YEAR);
@@ -901,7 +898,7 @@ public class ArchiveViewModel extends ViewModel {
      */
     private boolean isPastTime(String time) {
         if (time != null) {
-            Calendar now = GregorianCalendar.getInstance(TimeZone.getTimeZone(UTC));
+            Calendar now = Utils.getUtcCalendar();
             now.setTime(new Date());
 
             return now.getTimeInMillis() > Long.valueOf(time);
@@ -911,14 +908,14 @@ public class ArchiveViewModel extends ViewModel {
     }
 
     private String createLocalTimeString(String time) {
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        Calendar calendar = Utils.getLocalCalendar();
         calendar.setTimeInMillis(Long.parseLong(time));
 
         return Utils.prependZero(calendar.get(Calendar.HOUR_OF_DAY)) + COLON + Utils.prependZero(calendar.get(Calendar.MINUTE));
     }
 
     private String createLocalDateString(String time) {
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        Calendar calendar = Utils.getLocalCalendar();
         calendar.setTimeInMillis(Long.parseLong(time));
 
         return calendar.get(Calendar.DATE) + DOT + (calendar.get(Calendar.MONTH) + 1) + DOT + calendar.get(Calendar.YEAR);

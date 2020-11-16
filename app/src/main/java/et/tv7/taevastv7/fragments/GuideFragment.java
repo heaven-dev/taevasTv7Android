@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 import et.tv7.taevastv7.BuildConfig;
 import et.tv7.taevastv7.R;
@@ -412,7 +411,7 @@ public class GuideFragment extends Fragment implements ArchiveDataLoadedListener
      * Create dates (label, date used in guide search).
      */
     private void createDates() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        Calendar calendar = Utils.getLocalCalendar();
         calendar.setTime(new Date());
 
         for(int i = 0; i < DATES_COUNT; i++) {
