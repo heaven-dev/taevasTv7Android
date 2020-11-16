@@ -1,5 +1,14 @@
 # taevasTv7Android
 
+## Branches
+
+| Features | Branch |
+| :-------------- | :-------------- |
+| TV channel only | [master](https://github.com/heaven-dev/taevasTv7Android) |
+| TV channel and video archive | [channelAndArchive](https://github.com/heaven-dev/taevasTv7Android/tree/channelAndArchive) |
+
+## Overview
+
 [TV7](https://www.tv7.ee/) Android smart TV application. This application locale is __et__ (Estonian).
 
 Developer pages of [Android TV](https://developer.android.com/tv).
