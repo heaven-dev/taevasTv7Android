@@ -8,6 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
+import static et.tv7.taevastv7.helpers.Constants.VOLLEY_CACHE;
 
 /**
  * Application class. Implements volley request queue functionality.
@@ -76,6 +77,7 @@ public class TaevasTv7 extends Application {
             Log.d(LOG_TAG, "TaevasTv7.addToRequestQueue() called.");
         }
 
+        req.setShouldCache(VOLLEY_CACHE);
         req.setTag(TAG);
         getRequestQueue().add(req);
     }

@@ -40,6 +40,10 @@ import static et.tv7.taevastv7.helpers.Constants.PLAY;
 import static et.tv7.taevastv7.helpers.Constants.PROGRAM_INFO_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SERIES_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ZERO_STR;
+import static et.tv7.taevastv7.helpers.PageStateItem.DATA;
+import static et.tv7.taevastv7.helpers.PageStateItem.DATA_LENGTH;
+import static et.tv7.taevastv7.helpers.PageStateItem.OFFSET;
+import static et.tv7.taevastv7.helpers.PageStateItem.SELECTED_POS;
 
 /**
  * Categories fragment.
@@ -124,10 +128,10 @@ public class CategoriesFragment extends Fragment implements ArchiveDataLoadedLis
                 if (pageStateItem != null) {
                     Utils.showProgressBar(root, R.id.categoriesProgress);
 
-                    this.addElements(pageStateItem.getData());
-                    this.scrollToPosition(pageStateItem.getSelectedPos());
-                    dataLength = pageStateItem.getDataLength();
-                    offset = pageStateItem.getOffset();
+                    this.addElements((JSONArray)pageStateItem.getValue(DATA));
+                    this.scrollToPosition((Integer)pageStateItem.getValue(SELECTED_POS));
+                    dataLength = (Integer)pageStateItem.getValue(DATA_LENGTH);
+                    offset = (Integer)pageStateItem.getValue(OFFSET);
                 }
                 else {
                     this.loadCategoryPrograms(Utils.stringToInt(Utils.getValue(selectedCategory, CATEGORY_ID)));
@@ -164,6 +168,7 @@ public class CategoriesFragment extends Fragment implements ArchiveDataLoadedLis
                 else {
                     // next loads
                     categoryGridAdapter.addElements(jsonArray);
+                    categoryGridAdapter.notifyDataSetChanged();
                 }
 
                 int length = jsonArray.length();
