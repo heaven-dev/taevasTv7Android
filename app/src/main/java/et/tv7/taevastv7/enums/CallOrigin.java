@@ -1,4 +1,4 @@
-package et.tv7.taevastv7.helpers;
+package et.tv7.taevastv7.enums;
 
 /**
  * Helper enum.
