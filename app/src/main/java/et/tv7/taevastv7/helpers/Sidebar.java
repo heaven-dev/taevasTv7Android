@@ -23,7 +23,7 @@ public class Sidebar {
         List<TextView> menuTexts = new ArrayList<>();
 
         for(int i = 0; i < MENU_ITEM_IDS.size(); i++) {
-            et.tv7.taevastv7.helpers.MenuItem menuItem = MENU_ITEM_IDS.get(i);
+            MenuItem menuItem = MENU_ITEM_IDS.get(i);
             TextView tv = root.findViewById(menuItem.getMenuTextId());
             menuTexts.add(tv);
         }
@@ -91,6 +91,9 @@ public class Sidebar {
         else if (id == R.id.guideMenuContainer) {
             focusedMenuId = setFocusToMenu(root, R.id.searchMenuContainer);
         }
+        else if (id == R.id.searchMenuContainer) {
+            focusedMenuId = setFocusToMenu(root, R.id.favoritesMenuContainer);
+        }
 
         if (focusedMenuId == 0) {
             return;
@@ -108,7 +111,10 @@ public class Sidebar {
         int id = getFocusedMenuItem(root);
 
         int focusedMenuId = 0;
-        if (id == R.id.searchMenuContainer) {
+        if (id == R.id.favoritesMenuContainer) {
+            focusedMenuId = setFocusToMenu(root, R.id.searchMenuContainer);
+        }
+        else if (id == R.id.searchMenuContainer) {
             focusedMenuId = setFocusToMenu(root, R.id.guideMenuContainer);
         }
         else if (id == R.id.guideMenuContainer) {
@@ -131,7 +137,7 @@ public class Sidebar {
     }
 
     public static void setSelectedMenuItem(View root, int menuId) {
-        for (et.tv7.taevastv7.helpers.MenuItem menuItem: MENU_ITEM_IDS) {
+        for (MenuItem menuItem: MENU_ITEM_IDS) {
             int menuContainerId = menuItem.getMenuContainerId();
             if (menuContainerId == menuId) {
                 setSelectionToMenu(root, menuId);
@@ -151,19 +157,22 @@ public class Sidebar {
 
             String fragmentTag = null;
             if (menuId == R.id.tvMenuContainer) {
-                fragmentTag = et.tv7.taevastv7.helpers.Constants.TV_MAIN_FRAGMENT;
+                fragmentTag = Constants.TV_MAIN_FRAGMENT;
             }
             else if (menuId == R.id.archiveMenuContainer) {
-                fragmentTag = et.tv7.taevastv7.helpers.Constants.ARCHIVE_MAIN_FRAGMENT;
+                fragmentTag = Constants.ARCHIVE_MAIN_FRAGMENT;
             }
             else if (menuId == R.id.guideMenuContainer) {
-                fragmentTag = et.tv7.taevastv7.helpers.Constants.GUIDE_FRAGMENT;
+                fragmentTag = Constants.GUIDE_FRAGMENT;
             }
             else if (menuId == R.id.searchMenuContainer) {
-                fragmentTag = et.tv7.taevastv7.helpers.Constants.SEARCH_FRAGMENT;
+                fragmentTag = Constants.SEARCH_FRAGMENT;
+            }
+            else if (menuId == R.id.favoritesMenuContainer) {
+                fragmentTag = Constants.FAVORITES_FRAGMENT;
             }
 
-            et.tv7.taevastv7.helpers.Utils.toPage(fragmentTag, activity, true, false,null);
+            Utils.toPage(fragmentTag, activity, true, false,null);
         }
     }
 }
