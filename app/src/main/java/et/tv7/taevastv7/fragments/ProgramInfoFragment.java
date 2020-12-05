@@ -49,6 +49,7 @@ import static et.tv7.taevastv7.helpers.Constants.NEGATIVE_ONE_STR;
 import static et.tv7.taevastv7.helpers.Constants.ONE_STR;
 import static et.tv7.taevastv7.helpers.Constants.PROGRAM_INFO_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SERIES_AND_NAME;
+import static et.tv7.taevastv7.helpers.Constants.TWO_STR;
 import static et.tv7.taevastv7.helpers.Constants.ZERO_STR;
 
 /**
@@ -149,6 +150,10 @@ public class ProgramInfoFragment extends Fragment {
                 else if (isVisibleInVod.equals(ONE_STR)) {
                     videoAvailable = true;
                     comingProgram = false;
+                }
+                else if (isVisibleInVod.equals(TWO_STR)) {
+                    videoAvailable = true;
+                    comingProgram = true;
                 }
                 else if (isVisibleInVod.equals(NEGATIVE_ONE_STR)) {
                     videoAvailable = false;
