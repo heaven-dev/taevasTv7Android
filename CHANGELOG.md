@@ -1,3 +1,14 @@
+# 10.12.2020 10:22
+
+### Bug Fixes
+
+* Fixed size of one banner.
+
+### Features
+
+* none
+
+
 # 10.12.2020 09:15
 
 ### Bug Fixes
