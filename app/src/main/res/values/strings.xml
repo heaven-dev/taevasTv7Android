@@ -17,7 +17,7 @@
     <string name="archive">Arhiiv</string>
     <string name="guide">Saatekava</string>
     <string name="search">Otsing</string>
-    <string name="favorites">Suosikit</string>
+    <string name="favorites">Lemmikud</string>
 
     <string name="we_recommend">Vaata arhiivist"</string>
     <string name="most_viewed">Vaadatuimad</string>
@@ -35,8 +35,8 @@
     <string name="clear">Kustuta</string>
     <string name="search_results">Otsingu tulemused</string>
 
-    <string name="no_hits">Ei hakuosumia</string>
-    <string name="no_favorites">Ei lisättyjä suosikkeja</string>
-    <string name="added_to_favorites">Lisätty suosikkeihin</string>
-    <string name="removed_from_favorites">Poistettu suosikeista</string>
+    <string name="no_hits">Otsingutulemusi pole</string>
+    <string name="no_favorites">Lemmikuid pole lisatud</string>
+    <string name="added_to_favorites">Lisatud lemmikutesse</string>
+    <string name="removed_from_favorites">Lemmikutest eemaldatud</string>
 </resources>
