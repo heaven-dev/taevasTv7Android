@@ -31,6 +31,7 @@ import java.util.TimeZone;
 
 import et.tv7.taevastv7.BuildConfig;
 import et.tv7.taevastv7.R;
+import et.tv7.taevastv7.fragments.AboutFragment;
 import et.tv7.taevastv7.fragments.ArchiveMainFragment;
 import et.tv7.taevastv7.fragments.ArchivePlayerFragment;
 import et.tv7.taevastv7.fragments.CategoriesFragment;
@@ -44,6 +45,7 @@ import et.tv7.taevastv7.fragments.SeriesFragment;
 import et.tv7.taevastv7.fragments.TvMainFragment;
 import et.tv7.taevastv7.fragments.TvPlayerFragment;
 
+import static et.tv7.taevastv7.helpers.Constants.ABOUT_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ARCHIVE_MAIN_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ARCHIVE_PLAYER_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.CATEGORIES_FRAGMENT;
@@ -206,6 +208,9 @@ public abstract class Utils {
                 }
                 else if (page.equals(FAVORITES_FRAGMENT)) {
                     fragment = FavoritesFragment.newInstance();
+                }
+                else if (page.equals(ABOUT_FRAGMENT)) {
+                    fragment = AboutFragment.newInstance();
                 }
                 else if (page.equals(EXIT_OVERLAY_FRAGMENT)) {
                     fragment = ExitFragment.newInstance();

@@ -18,6 +18,7 @@
     <string name="guide">Saatekava</string>
     <string name="search">Otsing</string>
     <string name="favorites">Lemmikud</string>
+    <string name="about">Infot</string>
 
     <string name="we_recommend">Vaata arhiivist"</string>
     <string name="most_viewed">Vaadatuimad</string>
@@ -39,4 +40,11 @@
     <string name="no_favorites">Lemmikuid pole lisatud</string>
     <string name="added_to_favorites">Lisatud lemmikutesse</string>
     <string name="removed_from_favorites">Lemmikutest eemaldatud</string>
+
+    <string name="app_package_title">App package:</string>
+    <string name="app_version_title">App version:</string>
+    <string name="os_version_title">OS version:</string>
+    <string name="os_api_level_title">OS API level:</string>
+    <string name="device_title">Device:</string>
+    <string name="model_and_product_title">Model (Product):</string>
 </resources>
