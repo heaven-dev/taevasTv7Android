@@ -348,6 +348,10 @@ public class SearchFragment extends Fragment {
         boolean visibility = true;
         if (searchKeyboardType == SearchKeyboardType.SPECIAL) {
             visibility = false;
+            this.hideColumns(true);
+        }
+        else {
+            this.hideColumns(false);
         }
 
         this.setRow3Visibility(visibility);
@@ -383,6 +387,18 @@ public class SearchFragment extends Fragment {
                     tv.setText(character);
                 }
             }
+        }
+    }
+
+    /**
+     * Hide/show some buttons.
+     */
+    private void hideColumns(boolean hide) {
+        int operation = hide ? View.GONE : View.VISIBLE;
+
+        TextView tv = root.findViewById(R.id.k_0_11);
+        if (tv != null) {
+            tv.setVisibility(operation);
         }
     }
 
