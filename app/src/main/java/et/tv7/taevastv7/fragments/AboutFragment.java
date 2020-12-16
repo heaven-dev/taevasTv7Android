@@ -179,7 +179,7 @@ public class AboutFragment extends Fragment {
                 }
 
                 if (!Sidebar.isSideMenuOpen(menuTexts)) {
-                    Sidebar.showMenuTexts(menuTexts);
+                    Sidebar.showMenuTexts(menuTexts, root);
                     Sidebar.setFocusToMenu(root, R.id.aboutMenuContainer);
                 }
             }
@@ -237,7 +237,7 @@ public class AboutFragment extends Fragment {
      * Handles focus out from side menu.
      */
     private void focusOutFromSideMenu() {
-        Sidebar.hideMenuTexts(menuTexts);
+        Sidebar.hideMenuTexts(menuTexts, root);
         Sidebar.setSelectedMenuItem(root, R.id.aboutMenuContainer);
 
         Utils.requestFocusById(root, R.id.aboutContentContainer);
