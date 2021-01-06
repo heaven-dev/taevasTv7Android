@@ -1,3 +1,14 @@
+# 06.01.2021 18:14
+
+### Bug Fixes
+
+* Added handling to the KEYCODE_MEDIA_PLAY_PAUSE keycode event to video fragments. Version number increased.
+
+### Features
+
+* none
+
+
 # 03.01.2021 09:56
 
 ### Bug Fixes
