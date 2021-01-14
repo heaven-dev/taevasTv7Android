@@ -31,6 +31,7 @@
     <string name="first_broadcast">Esimene saade</string>
     <string name="duration">Kestus</string>
     <string name="episode">Osa</string>
+    <string name="aspect_ratio">Kuvasuhe</string>
 
     <string name="back">Tagasi</string>
     <string name="do_search">Otsi</string>

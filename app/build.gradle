@@ -8,8 +8,8 @@ android {
         applicationId "et.tv7.taevastv7"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 3
-        versionName "0.0.3"
+        versionCode 4
+        versionName "0.0.4"
 
     }
 

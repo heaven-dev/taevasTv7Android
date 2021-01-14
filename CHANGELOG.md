@@ -1,3 +1,14 @@
+# 14.01.2021 15:30
+
+### Bug Fixes
+
+* none
+
+### Features
+
+* Added info about aspect ratio to program info page if aspect ratio isn't 16:9.
+
+
 # 06.01.2021 18:14
 
 ### Bug Fixes
