@@ -4,6 +4,7 @@
 
 [TV7](https://www.tv7.ee/) Android smart TV application. This application locale is __et__ (Estonian). Application make possible to watch TV channel and videos from the video archive.
 
+This application is already in the [Google Play store](https://play.google.com/store/apps/details?id=et.tv7.taevastv7). There are some screenshots of the application.
 
 Developer pages of [Android TV](https://developer.android.com/tv).
 Guide of [Android TV](https://developer.android.com/training/tv).
