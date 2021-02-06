@@ -1,3 +1,12 @@
+# 06.02.2021 12:48
+
+### Bug Fixes
+
+* Fixed guide bug on TV main page.
+* Fixed category, favorites, guide and search result caption texts bug.
+* Version number updated.
+
+
 # 29.01.2021 08:39
 
 ### Bug Fixes

@@ -21,6 +21,7 @@ import et.tv7.taevastv7.R;
 import et.tv7.taevastv7.helpers.Utils;
 
 import static et.tv7.taevastv7.helpers.Constants.CAPTION;
+import static et.tv7.taevastv7.helpers.Constants.EMPTY;
 import static et.tv7.taevastv7.helpers.Constants.IMAGE_PATH;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
 import static et.tv7.taevastv7.helpers.Constants.ONE_STR;
@@ -134,8 +135,11 @@ public class CategoryGridAdapter extends RecyclerView.Adapter<CategoryGridAdapte
                 }
 
                 value = Utils.getValue(obj, CAPTION);
-                if (value != null) {
+                if (value != null && value.length() > 0) {
                     holder.caption.setText(value);
+                }
+                else {
+                    holder.caption.setText(EMPTY);
                 }
             }
         }

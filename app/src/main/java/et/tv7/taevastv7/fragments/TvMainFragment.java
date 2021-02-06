@@ -38,6 +38,7 @@ import et.tv7.taevastv7.model.SharedCacheViewModel;
 
 import static et.tv7.taevastv7.helpers.Constants.CHANNEL_URL_PARAM;
 import static et.tv7.taevastv7.helpers.Constants.COMING_PROGRAM_IMAGE_AND_TEXT;
+import static et.tv7.taevastv7.helpers.Constants.EMPTY;
 import static et.tv7.taevastv7.helpers.Constants.EXIT_OVERLAY_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.GUIDE_ELEMENT_COUNT;
 import static et.tv7.taevastv7.helpers.Constants.GUIDE_ROWS;
@@ -421,9 +422,12 @@ public class TvMainFragment extends Fragment implements EpgDataLoadedListener, F
                         rowTitle.setText(e.getTitle());
 
                         String desc = e.getDesc();
-                        if (desc != null) {
+                        if (desc != null && desc.length() > 0) {
                             desc = PIPE_WITH_SPACES + desc;
                             rowDesc.setText(desc);
+                        }
+                        else {
+                            rowDesc.setText(EMPTY);
                         }
                     }
 
