@@ -1,3 +1,14 @@
+# 08.03.2021 15:36
+
+### Bug Fixes
+
+* Fix to virtual keyboard.
+
+### Features
+
+* Smaller toolbar and sidebar.
+
+
 # 06.02.2021 12:48
 
 ### Bug Fixes
