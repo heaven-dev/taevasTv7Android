@@ -1,4 +1,4 @@
-# 08.03.2021 15:36
+# 09.03.2021 09:43
 
 ### Bug Fixes
 
@@ -7,6 +7,9 @@
 ### Features
 
 * Smaller toolbar and sidebar.
+* Added video watch status bar to the program info page.
+* Added caption text to controls of archive player page.
+* New version number.
 
 
 # 06.02.2021 12:48
