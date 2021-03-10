@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -12,7 +14,6 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -31,10 +32,12 @@ import java.util.TimeZone;
 
 import et.tv7.taevastv7.BuildConfig;
 import et.tv7.taevastv7.R;
+import et.tv7.taevastv7.TaevasTv7;
 import et.tv7.taevastv7.fragments.AboutFragment;
 import et.tv7.taevastv7.fragments.ArchiveMainFragment;
 import et.tv7.taevastv7.fragments.ArchivePlayerFragment;
 import et.tv7.taevastv7.fragments.CategoriesFragment;
+import et.tv7.taevastv7.fragments.ErrorFragment;
 import et.tv7.taevastv7.fragments.ExitFragment;
 import et.tv7.taevastv7.fragments.FavoritesFragment;
 import et.tv7.taevastv7.fragments.GuideFragment;
@@ -52,6 +55,7 @@ import static et.tv7.taevastv7.helpers.Constants.CATEGORIES_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.COLON;
 import static et.tv7.taevastv7.helpers.Constants.DASH;
 import static et.tv7.taevastv7.helpers.Constants.DOT;
+import static et.tv7.taevastv7.helpers.Constants.ERROR_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.EXIT_OVERLAY_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.FADE_IN_ANIMATION_DURATION;
 import static et.tv7.taevastv7.helpers.Constants.FADE_IN_ANIMATION_END;
@@ -81,12 +85,6 @@ import static et.tv7.taevastv7.helpers.Constants.ZERO_STR;
  * Util methods.
  */
 public abstract class Utils {
-
-    public static void showErrorToast(Context context, String message) {
-        if (context != null && message != null) {
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-        }
-    }
 
     public static void fadePageAnimation(ViewGroup viewGroup) {
         if (SHOW_ANIMATIONS) {
@@ -173,7 +171,18 @@ public abstract class Utils {
         return activity.getCurrentFocus();
     }
 
+    public static void toErrorPage(FragmentActivity activity) {
+        toPage(ERROR_FRAGMENT, activity, true, false, null);
+    }
+
     public static void toPage(String page, FragmentActivity activity, boolean replace, boolean addToBackStack, Bundle bundle) {
+        if (!page.equals(ERROR_FRAGMENT) && !isConnectedToGateway()) {
+            page = ERROR_FRAGMENT;
+            replace = true;
+            addToBackStack = false;
+            bundle = null;
+        }
+
         FragmentManager fragmentManager = getFragmentManager(activity);
         if (fragmentManager != null) {
             Fragment fragment = fragmentManager.findFragmentByTag(page);
@@ -213,6 +222,9 @@ public abstract class Utils {
                 }
                 else if (page.equals(ABOUT_FRAGMENT)) {
                     fragment = AboutFragment.newInstance();
+                }
+                else if (page.equals(ERROR_FRAGMENT)) {
+                    fragment = ErrorFragment.newInstance();
                 }
                 else if (page.equals(EXIT_OVERLAY_FRAGMENT)) {
                     fragment = ExitFragment.newInstance();
@@ -342,6 +354,30 @@ public abstract class Utils {
 
     public static long stringToLong(String value) {
         return Long.parseLong(value);
+    }
+
+    public static boolean isConnectedToGateway() {
+        boolean connected = true;
+
+        TaevasTv7 app = TaevasTv7.getInstance();
+        if (app != null) {
+            Activity activity = app.getActivity();
+            if (activity != null) {
+                ConnectivityManager connectivityManager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+                connected = networkInfo != null && networkInfo.isConnected();
+            }
+
+            if (BuildConfig.DEBUG) {
+                Log.d(LOG_TAG, "Utils.isConnectedToGateway():  Is connected: " + connected);
+            }
+
+            if (!connected) {
+                app.setConnectedToNet(false);
+            }
+        }
+
+        return connected;
     }
 
     public static JSONArray getSavedPrefs(String tag, String defaultValue, Context context) throws Exception {
