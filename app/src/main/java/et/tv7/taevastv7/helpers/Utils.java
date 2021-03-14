@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -32,7 +30,6 @@ import java.util.TimeZone;
 
 import et.tv7.taevastv7.BuildConfig;
 import et.tv7.taevastv7.R;
-import et.tv7.taevastv7.TaevasTv7;
 import et.tv7.taevastv7.fragments.AboutFragment;
 import et.tv7.taevastv7.fragments.ArchiveMainFragment;
 import et.tv7.taevastv7.fragments.ArchivePlayerFragment;
@@ -66,7 +63,6 @@ import static et.tv7.taevastv7.helpers.Constants.FAVORITES_SP_TAG;
 import static et.tv7.taevastv7.helpers.Constants.GUIDE_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ID;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
-import static et.tv7.taevastv7.helpers.Constants.NO_NETWORK_CONNECTION_ERROR;
 import static et.tv7.taevastv7.helpers.Constants.NULL_VALUE;
 import static et.tv7.taevastv7.helpers.Constants.PROGRAM_INFO_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SEARCH_FRAGMENT;
@@ -349,32 +345,6 @@ public abstract class Utils {
     public static long stringToLong(String value) {
         return Long.parseLong(value);
     }
-
-    /*
-    public static boolean isConnectedToGateway() {
-        boolean connected = true;
-
-        TaevasTv7 app = TaevasTv7.getInstance();
-        if (app != null) {
-            Activity activity = app.getActivity();
-            if (activity != null) {
-                ConnectivityManager connectivityManager = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-                connected = networkInfo != null && networkInfo.isConnected();
-            }
-
-            if (BuildConfig.DEBUG) {
-                Log.d(LOG_TAG, "Utils.isConnectedToGateway():  Is connected: " + connected);
-            }
-
-            if (!connected) {
-                app.setErrorCode(NO_NETWORK_CONNECTION_ERROR);
-            }
-        }
-
-        return connected;
-    }
-    */
 
     public static JSONArray getSavedPrefs(String tag, String defaultValue, Context context) throws Exception {
         JSONArray jsonArray = null;
