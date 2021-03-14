@@ -8,6 +8,7 @@ import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.Response;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
@@ -52,6 +53,9 @@ import static et.tv7.taevastv7.helpers.Constants.EQUAL;
 import static et.tv7.taevastv7.helpers.Constants.ICON;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
 import static et.tv7.taevastv7.helpers.Constants.MS_STR;
+import static et.tv7.taevastv7.helpers.Constants.NETWORK_REQUEST_FAILED_ERROR;
+import static et.tv7.taevastv7.helpers.Constants.NETWORK_REQUEST_TIMEOUT_ERROR;
+import static et.tv7.taevastv7.helpers.Constants.NO_NETWORK_CONNECTION_ERROR;
 import static et.tv7.taevastv7.helpers.Constants.PROGRAMME;
 import static et.tv7.taevastv7.helpers.Constants.QUESTION_MARK;
 import static et.tv7.taevastv7.helpers.Constants.SRC;
@@ -279,11 +283,16 @@ public class ProgramScheduleViewModel extends ViewModel {
 
                             if (epgDataLoadedListener != null) {
                                 if (error instanceof NoConnectionError) {
-                                    app.setConnectedToNet(false);
-                                    epgDataLoadedListener.onNoNetwork();
+                                    app.setErrorCode(NO_NETWORK_CONNECTION_ERROR);
+                                    epgDataLoadedListener.onNetworkError();
+                                }
+                                else if (error instanceof TimeoutError) {
+                                    app.setErrorCode(NETWORK_REQUEST_TIMEOUT_ERROR);
+                                    epgDataLoadedListener.onNetworkError();
                                 }
                                 else {
-                                    epgDataLoadedListener.onEpgDataLoadError(error.getMessage());
+                                    app.setErrorCode(NETWORK_REQUEST_FAILED_ERROR);
+                                    epgDataLoadedListener.onNetworkError();
                                 }
                             }
                         }

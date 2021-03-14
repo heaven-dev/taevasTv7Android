@@ -1,6 +1,5 @@
 package et.tv7.taevastv7.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -263,13 +262,13 @@ public class CategoriesFragment extends Fragment implements ArchiveDataLoadedLis
     }
 
     /**
-     * Archive data load no network error response.
+     * Archive data load network error response.
      * @param type
      */
     @Override
-    public void onNoNetwork(String type) {
+    public void onNetworkError(String type) {
         if (BuildConfig.DEBUG) {
-            Log.d(LOG_TAG, "Archive data load error. Type: " + type + " - ***No network connection!***");
+            Log.d(LOG_TAG, "Archive data load error. Type: " + type + " - ***Network error!***");
         }
 
         Utils.toErrorPage(getActivity());

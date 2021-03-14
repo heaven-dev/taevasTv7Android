@@ -1,6 +1,5 @@
 package et.tv7.taevastv7.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -248,12 +247,12 @@ public class TvMainFragment extends Fragment implements EpgDataLoadedListener, F
     }
 
     /**
-     * No network callback.
+     * Network error callback.
      */
     @Override
-    public void onNoNetwork() {
+    public void onNetworkError() {
         if (BuildConfig.DEBUG) {
-            Log.d(LOG_TAG, "MainActivity.onNoNetwork(): ***No network connection!***");
+            Log.d(LOG_TAG, "MainActivity.onNetworkError(): ***Network error!***");
         }
 
         Utils.toErrorPage(getActivity());

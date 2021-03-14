@@ -66,6 +66,7 @@ import static et.tv7.taevastv7.helpers.Constants.FAVORITES_SP_TAG;
 import static et.tv7.taevastv7.helpers.Constants.GUIDE_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ID;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
+import static et.tv7.taevastv7.helpers.Constants.NO_NETWORK_CONNECTION_ERROR;
 import static et.tv7.taevastv7.helpers.Constants.NULL_VALUE;
 import static et.tv7.taevastv7.helpers.Constants.PROGRAM_INFO_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SEARCH_FRAGMENT;
@@ -349,6 +350,7 @@ public abstract class Utils {
         return Long.parseLong(value);
     }
 
+    /*
     public static boolean isConnectedToGateway() {
         boolean connected = true;
 
@@ -366,12 +368,13 @@ public abstract class Utils {
             }
 
             if (!connected) {
-                app.setConnectedToNet(false);
+                app.setErrorCode(NO_NETWORK_CONNECTION_ERROR);
             }
         }
 
         return connected;
     }
+    */
 
     public static JSONArray getSavedPrefs(String tag, String defaultValue, Context context) throws Exception {
         JSONArray jsonArray = null;
