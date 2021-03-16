@@ -34,6 +34,7 @@ import et.tv7.taevastv7.fragments.AboutFragment;
 import et.tv7.taevastv7.fragments.ArchiveMainFragment;
 import et.tv7.taevastv7.fragments.ArchivePlayerFragment;
 import et.tv7.taevastv7.fragments.CategoriesFragment;
+import et.tv7.taevastv7.fragments.ChannelInfoFragment;
 import et.tv7.taevastv7.fragments.ErrorFragment;
 import et.tv7.taevastv7.fragments.ExitFragment;
 import et.tv7.taevastv7.fragments.FavoritesFragment;
@@ -49,6 +50,7 @@ import static et.tv7.taevastv7.helpers.Constants.ABOUT_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ARCHIVE_MAIN_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ARCHIVE_PLAYER_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.CATEGORIES_FRAGMENT;
+import static et.tv7.taevastv7.helpers.Constants.CHANNEL_INFO_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.COLON;
 import static et.tv7.taevastv7.helpers.Constants.DASH;
 import static et.tv7.taevastv7.helpers.Constants.DOT;
@@ -209,6 +211,9 @@ public abstract class Utils {
                 }
                 else if (page.equals(FAVORITES_FRAGMENT)) {
                     fragment = FavoritesFragment.newInstance();
+                }
+                else if (page.equals(CHANNEL_INFO_FRAGMENT)) {
+                    fragment = ChannelInfoFragment.newInstance();
                 }
                 else if (page.equals(ABOUT_FRAGMENT)) {
                     fragment = AboutFragment.newInstance();

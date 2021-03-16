@@ -21,6 +21,7 @@
     <string name="guide">Saatekava</string>
     <string name="search">Otsing</string>
     <string name="favorites">Lemmikud</string>
+    <string name="channel_info">Taevas TV7</string>
     <string name="about">Infot</string>
 
     <string name="we_recommend">Vaata arhiivist"</string>
@@ -57,4 +58,25 @@
     <string name="network_request_failed">Network request failed :-(</string>
     <string name="network_request_timeout">Network request timeout :-(</string>
     <string name="close">Close</string>
+
+    <string name="title_1">Kes me oleme?</string>
+    <string name="title_1_chapter_1">Taevas TV7 on kristlik telekanal, mille eesmärgiks on edastada head sõnumit Jeesusest Kristusest ja mille väärtused põhinevad Jumala Sõnal, Piiblil.</string>
+    <string name="title_1_chapter_2">TV7 edastab mitmekülgset saateprogrammi kogu perele. Telekanali rahastamine põhineb vabatahtlikel annetustel ning reklaami- ja eetriaja müügil. Telekanali 6-tunnine programm algab kell 17.00 ning on kordusena eetris öösel ja järgmisel päeval.</string>
+    <string name="title_1_chapter_3">Kanali lipulaevaks on igapäevane uudistesaade “Iisraeli uudised” ja otse-eetri palvesaated “Taevas kuuleb” ja “Suur palveõhtu”, lisaks edastame igal pühapäeval kell 11.00 erinevate koguduste Jumalateenistusi.</string>
+    <string name="title_1_chapter_4">TV7 Eesti toimetuse värskemad saated on järgmised:</string>
+    <string name="title_1_chapter_5">* arutlussaated “Pastorid areenil”</string>
+    <string name="title_1_chapter_6">* õpetussaated “Ärka!”, “Eluallikal”, “Raha?“, “Kompass – vaimsed seadused“, “Elu koos Püha Vaimuga“, “Sõna vägi” ja “Tervenduskool”</string>
+    <string name="title_1_chapter_7">* päevakajalised saated “TV7 jälgedes”, "Elu kaitseks”, "Kuningriigi sõnumid” ja “Külalised meilt ja mujalt”</string>
+    <string name="title_1_chapter_8">* portreesaated "Jumala jooksutüdrukud”, “Muutus” ja “Kiri sinule”</string>
+    <string name="title_1_chapter_9">* dokumentaalsaade “Viljakandjad”, "Minevikust uude ellu”</string>
+    <string name="title_1_chapter_10">* noortesaade “3D-vaade“</string>
+    <string name="title_1_chapter_11">* lastesaated “Laulumaa”, "Pildipiibel”, “Lastestuudio” ning “Theo ja sõbrad”</string>
+    <string name="title_1_chapter_12">* otse-eetri palvesaade “Taevas kuuleb” ja "Suur palveõhtu“</string>
+    <string name="title_1_chapter_13">* muusikasaated “Muusikapaus” ja “Ülistusõhtu“</string>
+
+    <string name="title_2">Ajalugu &amp; tänapäev</string>
+    <string name="title_2_chapter_1">Taevas TV7 telekanal alustas esmakordselt saadete edastamist Eestis 15. detsembril aastal 2009. Eestikeelse kristliku telekanali sünnilugu on otseselt seotud Soomes tegutseva kanaliga Taivas TV7, mis sai alguse aastal 2003. Kanali tegevdirektor, endine kommunikatsiooninõunik Martti Ojares sai Jumala käest tugeva visiooni kristliku telekanali alustamisest. Kutse tuli ootamatult, kõigest mõni nädal peale pensionile jäämist pikaajaliselt tööpostilt tuntud meediakontsernis. Kuigi Marttil ja tema abikaasal Mirja Ojaresel polnud eriti midagi muud peale Jumala poolt antud visiooni ja usu Temasse, nad julgesid siiski võtta ususammu ja alustada esimese kristliku telekanaliga Soomes. Jumal on olnud ustav ja õnnistanud tööd.</string>
+    <string name="title_2_chapter_2">Tänaseks tegutseb TV7 Group meediamaja nime all viis telekanalit – soomekeelne Taivas TV7 ja noortele suunatud TV7 Plus, eestikeelne Taevas TV7, rootsikeelne Himlen TV7 &amp; venekeelne Nebesa TV7. Töötajaid on kokku ligi 100 ning tööd tehakse erinevates stuudiotes ja toimetustes Soomes, Eestis, Ukrainas ja Iisraelis.</string>
+
+    <string name="copyright">Copyright Taevas TV7. Unauthorized publication of programs or subtitles is prohibited.</string>
 </resources>

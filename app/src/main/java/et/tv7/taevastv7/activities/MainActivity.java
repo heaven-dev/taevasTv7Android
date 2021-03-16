@@ -23,6 +23,7 @@ import et.tv7.taevastv7.fragments.AboutFragment;
 import et.tv7.taevastv7.fragments.ArchiveMainFragment;
 import et.tv7.taevastv7.fragments.ArchivePlayerFragment;
 import et.tv7.taevastv7.fragments.CategoriesFragment;
+import et.tv7.taevastv7.fragments.ChannelInfoFragment;
 import et.tv7.taevastv7.fragments.ErrorFragment;
 import et.tv7.taevastv7.fragments.ExitFragment;
 import et.tv7.taevastv7.fragments.FavoritesFragment;
@@ -157,6 +158,10 @@ public class MainActivity extends AppCompatActivity implements EpgDataLoadedList
                 else if (fragment instanceof FavoritesFragment) {
                     // Favorites fragment visible
                     return ((FavoritesFragment) fragment).onKeyDown(keyCode, events);
+                }
+                else if (fragment instanceof ChannelInfoFragment) {
+                    // Channel info fragment visible
+                    return ((ChannelInfoFragment) fragment).onKeyDown(keyCode, events);
                 }
                 else if (fragment instanceof AboutFragment) {
                     // About fragment visible

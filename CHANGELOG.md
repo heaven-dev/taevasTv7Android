@@ -1,3 +1,16 @@
+# 16.03.2021 08:22
+
+### Bug Fixes
+
+* none
+
+### Features
+
+* Added info page of channel.
+* Added copyright text.
+* Version 9.
+
+
 # 14.03.2021 14:38
 
 ### Bug Fixes
