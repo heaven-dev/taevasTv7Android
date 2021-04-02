@@ -48,6 +48,7 @@ import static et.tv7.taevastv7.helpers.Constants.FAVORITES_TEXT_ANIMATION_END;
 import static et.tv7.taevastv7.helpers.Constants.FAVORITES_TEXT_ANIMATION_START;
 import static et.tv7.taevastv7.helpers.Constants.FAVORITES_TEXT_ANIMATION_START_OFFSET;
 import static et.tv7.taevastv7.helpers.Constants.ID;
+import static et.tv7.taevastv7.helpers.Constants.ID_NULL;
 import static et.tv7.taevastv7.helpers.Constants.IMAGE_PATH;
 import static et.tv7.taevastv7.helpers.Constants.IS_VISIBLE_ON_VOD;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
@@ -151,7 +152,7 @@ public class ProgramInfoFragment extends Fragment {
             backgroundImage = root.findViewById(R.id.backgroundImage);
             if (backgroundImage != null) {
                 String imagePath = Utils.getValue(selectedProgram, IMAGE_PATH);
-                if (imagePath != null && !imagePath.equals(EMPTY) && !imagePath.equals(NULL_VALUE)) {
+                if (imagePath != null && !imagePath.equals(EMPTY) && !imagePath.equals(NULL_VALUE) && !imagePath.contains(ID_NULL)) {
                     Glide.with(this).asBitmap().load(imagePath).into(backgroundImage);
                 }
                 else {

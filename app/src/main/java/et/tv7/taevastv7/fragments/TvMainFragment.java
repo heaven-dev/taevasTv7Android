@@ -44,6 +44,7 @@ import static et.tv7.taevastv7.helpers.Constants.GUIDE_ROWS;
 import static et.tv7.taevastv7.helpers.Constants.GUIDE_TIMER_TIMEOUT;
 import static et.tv7.taevastv7.helpers.Constants.HTTP;
 import static et.tv7.taevastv7.helpers.Constants.HTTPS;
+import static et.tv7.taevastv7.helpers.Constants.ID_NULL;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
 import static et.tv7.taevastv7.helpers.Constants.NULL_VALUE;
 import static et.tv7.taevastv7.helpers.Constants.PIPE_WITH_SPACES;
@@ -311,7 +312,7 @@ public class TvMainFragment extends Fragment implements EpgDataLoadedListener, F
 
                     String imageUrl = epgItem.getIcon();
 
-                    if (imageUrl != null && !imageUrl.equals(EMPTY) && !imageUrl.equals(NULL_VALUE)) {
+                    if (imageUrl != null && !imageUrl.equals(EMPTY) && !imageUrl.equals(NULL_VALUE) && !imageUrl.contains(ID_NULL)) {
                         // Change scheme from http to https
                         if (!imageUrl.startsWith(HTTPS)) {
                             imageUrl = imageUrl.replace(HTTP, HTTPS);

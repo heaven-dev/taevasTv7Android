@@ -23,6 +23,7 @@ import et.tv7.taevastv7.helpers.Utils;
 
 import static et.tv7.taevastv7.helpers.Constants.CAPTION;
 import static et.tv7.taevastv7.helpers.Constants.EMPTY;
+import static et.tv7.taevastv7.helpers.Constants.ID_NULL;
 import static et.tv7.taevastv7.helpers.Constants.IMAGE_PATH;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
 import static et.tv7.taevastv7.helpers.Constants.NULL_VALUE;
@@ -118,7 +119,7 @@ public class CategoryGridAdapter extends RecyclerView.Adapter<CategoryGridAdapte
             if (obj != null) {
 
                 String value = Utils.getValue(obj, IMAGE_PATH);
-                if (value != null && !value.equals(EMPTY) && !value.equals(NULL_VALUE)) {
+                if (value != null && !value.equals(EMPTY) && !value.equals(NULL_VALUE) && !value.contains(ID_NULL)) {
                     Glide.with(context).asBitmap().load(value).into(holder.categoryImage);
                 }
                 else {
