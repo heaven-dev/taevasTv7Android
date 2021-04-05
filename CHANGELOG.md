@@ -9,13 +9,6 @@
 * Version 11.
 
 
-# 01.04.2021 15:22
-
-### Bug Fixes
-
-* Sidebar menu absolute positioning.
-
-
 # 01.04.2021 12:36
 
 ### Bug Fixes
