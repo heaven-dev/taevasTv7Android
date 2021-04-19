@@ -1,11 +1,11 @@
-# 17.04.2021 11:38
+# 19.04.2021 18:47
 
 ### Bug Fixes
 * Fixed grid views refresh bug.
 * New version 12.
 
 ### Features
-* none
+* Changed progress bar color to TV7 default.
 
 
 # 12.04.2021 10:09
