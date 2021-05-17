@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "et.tv7.taevastv7"
         minSdkVersion 23
-        targetSdkVersion 29
-        versionCode 14
-        versionName "0.0.14"
+        targetSdkVersion 30
+        versionCode 15
+        versionName "1.0.0"
 
     }
 
