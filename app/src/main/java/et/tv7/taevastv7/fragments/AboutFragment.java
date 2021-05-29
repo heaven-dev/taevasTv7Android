@@ -14,6 +14,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import java.util.Calendar;
 import java.util.List;
 
 import et.tv7.taevastv7.BuildConfig;
@@ -23,11 +24,15 @@ import et.tv7.taevastv7.helpers.Utils;
 import et.tv7.taevastv7.model.SharedCacheViewModel;
 
 import static et.tv7.taevastv7.helpers.Constants.ARCHIVE_MAIN_FRAGMENT;
+import static et.tv7.taevastv7.helpers.Constants.COLON;
+import static et.tv7.taevastv7.helpers.Constants.DOT;
 import static et.tv7.taevastv7.helpers.Constants.LEFT_BRACKET;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
+import static et.tv7.taevastv7.helpers.Constants.NOT_AVAILABLE;
 import static et.tv7.taevastv7.helpers.Constants.OS_VERSION;
 import static et.tv7.taevastv7.helpers.Constants.RIGHT_BRACKET;
 import static et.tv7.taevastv7.helpers.Constants.SPACE;
+import static et.tv7.taevastv7.helpers.Constants.ZERO_DATE_TIME;
 
 
 /**
@@ -107,6 +112,11 @@ public class AboutFragment extends Fragment {
             String packageName = pInfo.packageName;
             int versionCode = pInfo.versionCode;
 
+            String buildTime = NOT_AVAILABLE;
+            if (pInfo.lastUpdateTime > 0) {
+                buildTime = this.getTimestampByTimeInMs(pInfo.lastUpdateTime);
+            }
+
             TextView tv = root.findViewById(R.id.appPackage);
             if (tv != null && packageName != null) {
                 tv.setText(packageName);
@@ -115,6 +125,11 @@ public class AboutFragment extends Fragment {
             tv = root.findViewById(R.id.appVersion);
             if (tv != null) {
                 tv.setText(String.valueOf(versionCode));
+            }
+
+            tv = root.findViewById(R.id.appBuildTime);
+            if (tv != null) {
+                tv.setText(buildTime);
             }
 
             String osVersion = System.getProperty(OS_VERSION) + LEFT_BRACKET + android.os.Build.VERSION.INCREMENTAL + RIGHT_BRACKET;
@@ -257,5 +272,19 @@ public class AboutFragment extends Fragment {
         Sidebar.setSelectedMenuItem(root, R.id.aboutMenuContainer);
 
         Utils.requestFocusById(root, R.id.aboutContentContainer);
+    }
+
+    private String getTimestampByTimeInMs(long time) {
+        if (time > 0) {
+            Calendar calendar = Utils.getLocalCalendar();
+            calendar.setTimeInMillis(time);
+
+            return calendar.get(Calendar.DATE) + DOT + (calendar.get(Calendar.MONTH) + 1) + DOT + calendar.get(Calendar.YEAR)
+                    + SPACE + Utils.prependZero(calendar.get(Calendar.HOUR_OF_DAY)) + COLON + Utils.prependZero(calendar.get(Calendar.MINUTE))
+                    + COLON + Utils.prependZero(calendar.get(Calendar.SECOND));
+        }
+        else {
+            return ZERO_DATE_TIME;
+        }
     }
 }
