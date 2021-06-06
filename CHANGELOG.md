@@ -1,8 +1,9 @@
-# 05.06.2021 16:43
+# 06.06.2021 14:28
 
 ### Bug Fixes
 * Fixed TV guide adapter bug.
 * minSdkVersion changed to 22 in the AndroidManifest.xml and the build.gradle files.
+* Changed date item selected/focused functionality on the guide fragment.
 
 ### Features
 * New version 17.
