@@ -50,7 +50,6 @@
 
     <string name="app_package_title">App package:</string>
     <string name="app_version_title">App version:</string>
-    <string name="app_build_time">App built:</string>
     <string name="os_version_title">OS version:</string>
     <string name="os_api_level_title">OS API level:</string>
     <string name="android_version_title">Android version:</string>
@@ -61,6 +60,7 @@
     <string name="no_network_connection">No network connection :-(</string>
     <string name="network_request_failed">Network request failed :-(</string>
     <string name="network_request_timeout">Network request timeout :-(</string>
+    <string name="restart">Restart</string>
     <string name="close">Close</string>
 
     <string name="title_1">Kes me oleme?</string>
@@ -82,5 +82,5 @@
     <string name="title_2_chapter_1">Taevas TV7 telekanal alustas esmakordselt saadete edastamist Eestis 15. detsembril aastal 2009. Eestikeelse kristliku telekanali sünnilugu on otseselt seotud Soomes tegutseva kanaliga Taivas TV7, mis sai alguse aastal 2003. Kanali tegevdirektor, endine kommunikatsiooninõunik Martti Ojares sai Jumala käest tugeva visiooni kristliku telekanali alustamisest. Kutse tuli ootamatult, kõigest mõni nädal peale pensionile jäämist pikaajaliselt tööpostilt tuntud meediakontsernis. Kuigi Marttil ja tema abikaasal Mirja Ojaresel polnud eriti midagi muud peale Jumala poolt antud visiooni ja usu Temasse, nad julgesid siiski võtta ususammu ja alustada esimese kristliku telekanaliga Soomes. Jumal on olnud ustav ja õnnistanud tööd.</string>
     <string name="title_2_chapter_2">Tänaseks tegutseb TV7 Group meediamaja nime all viis telekanalit – soomekeelne Taivas TV7 ja noortele suunatud TV7 Plus, eestikeelne Taevas TV7, rootsikeelne Himlen TV7 &amp; venekeelne Nebesa TV7. Töötajaid on kokku ligi 100 ning tööd tehakse erinevates stuudiotes ja toimetustes Soomes, Eestis, Ukrainas ja Iisraelis.</string>
 
-    <string name="copyright">Copyright Taevas TV7. Unauthorized publication of programs or subtitles is prohibited.</string>
+    <string name="copyright">Copyright © Taevas TV7. Unauthorized publication of programs or subtitles is prohibited.</string>
 </resources>
