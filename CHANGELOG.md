@@ -1,4 +1,4 @@
-# 05.07.2021 14:57
+# 09.07.2021 11:50
 
 ### Bug Fixes
 * none
@@ -6,6 +6,7 @@
 ### Features
 * Search string appended to the title of search result page.
 * Search history is available on the search page.
+* Use mobile API instead of exodus API to get guide.
 * New version 19.
 
 
