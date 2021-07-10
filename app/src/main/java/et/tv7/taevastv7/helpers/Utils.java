@@ -65,14 +65,17 @@ import static et.tv7.taevastv7.helpers.Constants.FAVORITES_SP_DEFAULT;
 import static et.tv7.taevastv7.helpers.Constants.FAVORITES_SP_TAG;
 import static et.tv7.taevastv7.helpers.Constants.GUIDE_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.ID;
+import static et.tv7.taevastv7.helpers.Constants.IS_SERIES;
 import static et.tv7.taevastv7.helpers.Constants.LOG_TAG;
 import static et.tv7.taevastv7.helpers.Constants.NULL_VALUE;
+import static et.tv7.taevastv7.helpers.Constants.ONE_STR;
 import static et.tv7.taevastv7.helpers.Constants.PROGRAM_INFO_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SEARCH_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SEARCH_RESULT_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SERIES_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SERIES_INFO_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.SHOW_ANIMATIONS;
+import static et.tv7.taevastv7.helpers.Constants.SID;
 import static et.tv7.taevastv7.helpers.Constants.TIME_STAMP_FORMAT;
 import static et.tv7.taevastv7.helpers.Constants.TV_MAIN_FRAGMENT;
 import static et.tv7.taevastv7.helpers.Constants.TV_PLAYER_FRAGMENT;
@@ -450,8 +453,16 @@ public abstract class Utils {
                         continue;
                     }
 
-                    if (value.equals(id)) {
-                        return i;
+                    if (key.equals(SID)) {
+                        String series = Utils.getJsonStringValue(obj, IS_SERIES);
+                        if (series != null && series.equals(ONE_STR) && value.equals(id)) {
+                            return i;
+                        }
+                    }
+                    else {
+                        if (value.equals(id)) {
+                            return i;
+                        }
                     }
                 }
             }
