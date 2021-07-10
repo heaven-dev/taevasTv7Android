@@ -32,6 +32,7 @@
     <string name="categories">Kategooriad</string>
     <string name="category">Kategooria</string>
     <string name="series">Saatesari</string>
+    <string name="topical_series">Praegused sarjad</string>
 
     <string name="first_broadcast">Esimene saade</string>
     <string name="duration">Kestus</string>
