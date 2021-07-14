@@ -1,4 +1,4 @@
-# 13.07.2021 17:54
+# 14.07.2021 18:52
 
 ### Bug Fixes
 
@@ -7,6 +7,7 @@
 ### Features
 
 * Configuration clear functionality added to the information page.
+* Added dynamic category rows to archive main page.
 * New version number 21.
 
 

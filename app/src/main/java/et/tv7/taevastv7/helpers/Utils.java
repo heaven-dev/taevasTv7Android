@@ -54,9 +54,12 @@ import static et.tv7.taevastv7.helpers.Constants.BROADCAST_DATE;
 import static et.tv7.taevastv7.helpers.Constants.BROADCAST_DATE_TIME;
 import static et.tv7.taevastv7.helpers.Constants.CAPTION;
 import static et.tv7.taevastv7.helpers.Constants.CATEGORIES_FRAGMENT;
+import static et.tv7.taevastv7.helpers.Constants.CATEGORY;
 import static et.tv7.taevastv7.helpers.Constants.CHANNEL_INFO_FRAGMENT;
+import static et.tv7.taevastv7.helpers.Constants.CID;
 import static et.tv7.taevastv7.helpers.Constants.COLON;
 import static et.tv7.taevastv7.helpers.Constants.DASH;
+import static et.tv7.taevastv7.helpers.Constants.DATE_INDEX;
 import static et.tv7.taevastv7.helpers.Constants.DOT;
 import static et.tv7.taevastv7.helpers.Constants.DURATION;
 import static et.tv7.taevastv7.helpers.Constants.END_DATE;
@@ -292,25 +295,29 @@ public abstract class Utils {
 
         if (obj != null) {
             guideItem = new GuideItem(
-                Utils.getJsonStringValue(obj, TIME),
-                Utils.getJsonStringValue(obj, END_TIME),
-                Utils.getJsonStringValue(obj, IMAGE_PATH),
-                Utils.getJsonStringValue(obj, CAPTION),
-                Utils.getJsonStringValue(obj, START_END_TIME),
-                Utils.getJsonStringValue(obj, START_DATE),
-                Utils.getJsonStringValue(obj, END_DATE),
-                Utils.getJsonStringValue(obj, FORMATTED_START_TIME),
-                Utils.getJsonStringValue(obj, FORMATTED_END_TIME),
-                Utils.getJsonStringValue(obj, BROADCAST_DATE),
-                Utils.getJsonStringValue(obj, BROADCAST_DATE_TIME),
-                Utils.getJsonStringValue(obj, DURATION),
-                Utils.getJsonStringValue(obj, SERIES),
-                Utils.getJsonStringValue(obj, NAME),
-                Utils.getJsonIntValue(obj, SID),
-                Utils.getJsonIntValue(obj, EPISODE_NUMBER),
-                Utils.getJsonIntValue(obj, IS_VISIBLE_ON_VOD),
-                Utils.getJsonStringValue(obj, SERIES_AND_NAME),
-                Utils.isStartDateToday(Utils.getJsonStringValue(obj, TIME)));
+                    Utils.getJsonStringValue(obj, TIME),
+                    Utils.getJsonStringValue(obj, END_TIME),
+                    Utils.getJsonStringValue(obj, IMAGE_PATH),
+                    Utils.getJsonStringValue(obj, CAPTION),
+                    Utils.getJsonStringValue(obj, START_END_TIME),
+                    Utils.getJsonStringValue(obj, START_DATE),
+                    Utils.getJsonStringValue(obj, END_DATE),
+                    Utils.getJsonStringValue(obj, FORMATTED_START_TIME),
+                    Utils.getJsonStringValue(obj, FORMATTED_END_TIME),
+                    Utils.getJsonStringValue(obj, BROADCAST_DATE),
+                    Utils.getJsonStringValue(obj, BROADCAST_DATE_TIME),
+                    Utils.getJsonStringValue(obj, DURATION),
+                    Utils.getJsonStringValue(obj, SERIES),
+                    Utils.getJsonStringValue(obj, NAME),
+                    Utils.getJsonStringValue(obj, CATEGORY),
+                    Utils.getJsonIntValue(obj, SID),
+                    Utils.getJsonIntValue(obj, CID),
+                    Utils.getJsonIntValue(obj, ID),
+                    Utils.getJsonIntValue(obj, EPISODE_NUMBER),
+                    Utils.getJsonIntValue(obj, IS_VISIBLE_ON_VOD),
+                    Utils.getJsonStringValue(obj, SERIES_AND_NAME),
+                    Utils.isStartDateToday(Utils.getJsonStringValue(obj, TIME)),
+                    Utils.getJsonIntValue(obj, DATE_INDEX));
         }
         return guideItem;
     }
