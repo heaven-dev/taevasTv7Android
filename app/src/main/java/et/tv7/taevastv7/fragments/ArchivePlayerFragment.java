@@ -75,6 +75,7 @@ import static et.tv7.taevastv7.helpers.Constants.CAPTION;
 import static et.tv7.taevastv7.helpers.Constants.COLON_WITH_SPACE;
 import static et.tv7.taevastv7.helpers.Constants.CUE_LINE_POSITION;
 import static et.tv7.taevastv7.helpers.Constants.DASH;
+import static et.tv7.taevastv7.helpers.Constants.DATE_INDEX_TODAY;
 import static et.tv7.taevastv7.helpers.Constants.EMPTY;
 import static et.tv7.taevastv7.helpers.Constants.EPISODE_NUMBER;
 import static et.tv7.taevastv7.helpers.Constants.EQUAL;
@@ -1325,7 +1326,7 @@ public class ArchivePlayerFragment extends Fragment implements Player.EventListe
      * Calls load newest programs.
      */
     private void loadNewestPrograms() {
-        archiveViewModel.getNewestPrograms(Utils.getTodayUtcFormattedLocalDate(), NEWEST_LIMIT, 0, this);
+        archiveViewModel.getNewestPrograms(Utils.getUtcFormattedLocalDate(DATE_INDEX_TODAY), NEWEST_LIMIT, 0, this);
     }
 
     /**
